@@ -1,0 +1,8 @@
+# Questions the Hermes Agent v0.22.5 docs do not answer (checked with grep for the
+# key terms). The right reply from ask_docs is "The docs don't say."
+How do I have Hermes order groceries from Instacart for me?
+What does a Hermes Agent Enterprise license cost per seat per month?
+How do I export my Hermes conversation history into a Microsoft Access database?
+Which COBOL compiler version ships with Hermes?
+How do I pair Hermes with a Garmin smartwatch to log my runs?
+How do I install Hermes on a PlayStation 5?

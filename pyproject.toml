@@ -1,0 +1,29 @@
+[project]
+name = "docsrag"
+version = "0.1.0"
+description = "Semantic search and cited answers over a folder of markdown, served to agents over MCP. Runs on local models."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "dkiiv" }]
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26,<3",
+  "mcp>=2.0,<3",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+docsrag = "docsrag.cli:main"
+docsrag-mcp = "docsrag.mcp_server:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["docsrag"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,24 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Install
+        run: |
+          uv venv -p ${{ matrix.python }} .venv
+          uv pip install -p .venv/bin/python -e '.[test]'
+      - name: Run tests (offline, hashing embedder, no model server)
+        run: .venv/bin/python -m pytest -q -p no:cacheprovider
